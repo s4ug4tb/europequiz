@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+ div{
+ width: 6000px;
+ height:6000px;
+ top: 0px;
+ left:0px;
+ position: absolute;
+ z-index: 1;
+ background-color: white;
+ }
+ div.vcross{
+ width:2px;
+ height:30px;
+ position:absolute;
+ top:45px;
+ left:99px;
+ z-index:2;
+ background-color:lime;
+ }
+ div.hcross{
+ width:30px;
+ height:2px;
+ position:absolute;
+ top:59px;
+ left:85px;
+ z-index:2;
+ background-color:lime;
+ }
+
+button{
+background-color:#99f76c;
+color:white;
+border:none;
+width:50px;
+height:30px;
+font-size:12px;
+margin-left: 10px;
+margin-top: 7px;
+}
+
+button:hover{
+opacity:0.6;
+cursor:pointer;
+}
+
+table, td, th {
+  border-collapse: collapse;
+  border:1px solid black;
+  font-size:15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 2px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #70c3f3;
+  color: white;
+}
+#smallalbania{
+clip-path:polygon(403px 389px, 397px 382px, 398px 364px, 397px 362px, 398px 354px, 403px 356px, 408px 361px, 406px 371px, 409px 378px, 412px 376px, 413px 379px, 407px 385px, 407px 389px, 403px 389px)
+}
+#smallandorra{
+clip-path:polygon(216px 354px, 219px 352px, 221px 356px, 218px 357px, 216px 354px)
+}
+#smallaustria{
+clip-path:polygon(301px 299px, 301px 296px, 298px 296px, 298px 294px, 302px 294px, 305px 297px, 309px 294px, 315px 296px, 328px 293px, 331px 295px, 333px 295px, 331px 287px, 340px 280px, 344px 282px, 350px 281px, 351px 277px, 363px 280px, 369px 280px, 371px 288px, 369px 291px, 364px 290px, 365px 299px, 361px 303px, 351px 303px, 349px 306px, 338px 305px, 323px 298px, 308px 301px, 307px 300px, 301px 299px)
+}
+#smallbelarus{
+clip-path:polygon(478px 246px, 445px 240px, 431px 244px, 432px 238px, 429px 237px, 434px 232px, 429px 219px, 439px 219px, 441px 215px, 442px 217px, 444px 215px, 447px 217px, 450px 213px, 448px 210px, 448px 207px, 451px 204px, 454px 205px, 458px 201px, 457px 200px, 454px 200px, 455px 197px, 461px 198px, 468px 192px, 478px 194px, 479px 198px, 486px 195px, 492px 198px, 492px 208px, 500px 216px, 504px 216px, 503px 221px, 509px 221px, 512px 223px, 508px 227px, 502px 224px, 499px 229px, 504px 237px, 496px 241px, 496px 248px, 487px 248px, 483px 242px, 478px 246px)
+}
+#smallbelgium{
+clip-path:polygon(233px 251px, 250px 263px, 254px 261px, 255px 261px, 256px 267px, 260px 269px, 261px 263px, 266px 260px, 265px 257px, 259px 254px, 260px 251px, 251px 247px, 244px 251px, 239px 248px, 233px 251px)
+}
+#smallbosniaandherzegovina{
+clip-path:polygon(384px 351px, 365px 335px, 363px 329px, 359px 325px, 361px 323px, 365px 326px, 372px 323px, 379px 325px, 386px 324px, 391px 328px, 393px 327px, 391px 334px, 395px 336px, 392px 338px, 395px 341px, 390px 341px, 387px 347px, 384px 348px, 384px 351px)
+}
+#smallbulgaria{
+clip-path:polygon(433px 369px, 434px 364px, 428px 358px, 428px 351px, 432px 347px, 426px 338px, 429px 335px, 431px 337px, 430px 340px, 458px 342px, 473px 336px, 487px 342px, 487px 344px, 481px 348px, 479px 357px, 483px 360px, 478px 362px, 475px 358px, 467px 364px, 464px 362px, 463px 367px, 456px 371px, 447px 365px, 433px 369px)
+}
+#smallcroatia{
+clip-path:polygon(339px 320px, 344px 320px, 346px 317px, 349px 320px, 355px 320px, 356px 317px, 359px 315px, 359px 311px, 361px 311px, 367px 307px, 378px 316px, 386px 317px, 388px 315px, 391px 321px, 392px 322px, 391px 323px, 391px 325px, 387px 322px, 380px 323px, 371px 321px, 365px 324px, 361px 321px, 357px 324px, 361px 330px, 363px 336px, 388px 356px, 386px 357px, 370px 345px, 364px 345px, 351px 335px, 345px 324px, 342px 330px, 336px 321px, 337px 320px, 339px 320px)
+}
+#smallcyprus{
+clip-path:polygon(548px 449px, 541px 451px, 536px 449px, 535px 445px, 551px 441px, 552px 444px, 548px 445px, 548px 449px)
+}
+#smalltheczechrepublic{
+clip-path:polygon(345px 280px, 326px 265px, 326px 262px, 344px 253px, 358px 255px, 358px 258px, 361px 258px, 361px 260px, 367px 265px, 370px 260px, 376px 262px, 377px 267px, 381px 266px, 385px 269px, 380px 271px, 376px 277px, 364px 278px, 350px 275px, 348px 279px, 345px 280px)
+}
+#smalldenmark{
+clip-path:polygon(290px 206px, 286px 198px, 286px 185px, 290px 180px, 298px 179px, 307px 174px, 305px 187px, 311px 187px, 308px 192px, 305px 190px, 301px 198px, 309px 199px, 313px 196px, 324px 194px, 324px 202px, 319px 209px, 312px 207px, 313px 205px, 318px 206px, 318px 201px, 315px 201px, 313px 196px, 309px 199px, 308px 205px, 300px 201px, 303px 207px, 290px 206px)
+}
+#smallestonia{
+clip-path:polygon(461px 153px, 431px 151px, 421px 157px, 423px 164px, 427px 167px, 431px 166px, 431px 170px, 439px 167px, 452px 174px, 458px 173px, 460px 170px, 458px 168px, 457px 159px, 461px 153px)
+}
+#smallfinland{
+clip-path:polygon(419px 148px, 403px 140px, 398px 116px, 430px 91px, 430px 86px, 416px 77px, 414px 58px, 391px 48px, 392px 46px, 422px 53px, 431px 40px, 454px 41px, 451px 55px, 463px 62px, 458px 69px, 468px 82px, 465px 91px, 475px 100px, 471px 105px, 485px 113px, 457px 140px, 421px 148px, 419px 148px)
+}
+#smallfrance{
+clip-path:polygon(187px 344px, 194px 317px, 186px 300px, 165px 291px, 161px 282px, 192px 281px, 189px 267px, 195px 268px, 196px 271px, 202px 272px, 222px 263px, 222px 254px, 231px 251px, 249px 265px, 254px 262px, 255px 268px, 260px 271px, 268px 271px, 285px 277px, 279px 293px, 272px 294px, 263px 311px, 270px 309px, 273px 319px, 268px 324px, 271px 333px, 279px 336px, 277px 340px, 273px 339px, 271px 344px, 266px 348px, 297px 350px, 299px 357px, 295px 368px, 291px 367px, 289px 356px, 295px 352px, 297px 350px, 266px 348px, 245px 343px, 236px 347px, 234px 355px, 223px 355px, 220px 350px, 215px 352px, 187px 344px)
+}
+#smallgermany{
+clip-path:polygon(281px 292px, 287px 277px, 268px 269px, 270px 266px, 266px 263px, 269px 261px, 266px 255px, 269px 247px, 266px 243px, 270px 243px, 275px 238px, 273px 234px, 275px 232px, 277px 225px, 275px 221px, 286px 221px, 293px 218px, 290px 213px, 294px 211px, 293px 209px, 303px 209px, 303px 211px, 313px 212px, 313px 211px, 315px 211px, 310px 216px, 316px 217px, 326px 211px, 331px 212px, 334px 209px, 337px 212px, 334px 214px, 340px 216px, 342px 224px, 340px 228px, 339px 230px, 345px 236px, 348px 252px, 344px 251px, 324px 260px, 324px 266px, 338px 278px, 329px 286px, 330px 291px, 315px 294px, 308px 292px, 305px 295px, 302px 292px, 281px 292px)
+}
+#smallgreece{
+clip-path:polygon(405px 391px, 409px 390px, 408px 386px, 415px 379px, 413px 375px, 421px 376px, 424px 372px, 432px 371px, 447px 368px, 456px 373px, 465px 369px, 465px 365px, 469px 367px, 464px 378px, 455px 375px, 445px 378px, 443px 386px, 430px 382px, 435px 398px, 452px 413px, 444px 416px, 435px 413px, 435px 431px, 422px 424px, 423px 416px, 416px 411px, 421px 408px, 417px 407px, 405px 391px)
+}
+#smallhungary{
+clip-path:polygon(379px 314px, 365px 302px, 367px 299px, 366px 292px, 369px 293px, 373px 289px, 381px 294px, 389px 288px, 402px 288px, 404px 282px, 411px 284px, 419px 284px, 425px 288px, 420px 291px, 411px 308px, 388px 312px, 385px 315px, 379px 314px)
+}
+#smalliceland{
+clip-path:polygon(30px 103px, 34px 99px, 32px 95px, 19px 95px, 18px 90px, 37px 90px, 37px 85px, 17px 85px, 31px 76px, 43px 79px, 41px 84px, 50px 86px, 54px 79px, 87px 75px, 105px 82px, 105px 89px, 62px 107px, 31px 103px)
+}
+#smallireland{
+clip-path:polygon(147px 201px, 135px 201px, 128px 213px, 115px 213px, 120px 225px, 126px 225px, 111px 243px, 116px 247px, 149px 237px, 152px 216px, 148px 215px, 143px 216px, 136px 211px, 147px 203px, 147px 201px)
+}
+#smallitaly{
+clip-path:polygon(272px 331px, 271px 323px, 275px 320px, 275px 320px, 273px 314px, 283px 312px, 287px 308px, 293px 314px, 297px 306px, 299px 309px, 303px 308px, 305px 305px, 307px 306px, 308px 302px, 323px 300px, 337px 307px, 338px 316px, 325px 321px, 329px 326px, 325px 327px, 325px 332px, 328px 337px, 324px 337px, 327px 342px, 330px 340px, 328px 337px, 325px 332px, 338px 342px, 342px 352px, 352px 362px, 366px 362px, 361px 367px, 386px 379px, 389px 385px, 387px 390px, 382px 383px, 374px 380px, 369px 389px, 373px 392px, 375px 398px, 370px 400px, 370px 404px, 364px 413px, 360px 411px, 356px 409px, 357px 412px, 354px 418px, 357px 421px, 356px 427px, 349px 427px, 348px 423px, 328px 414px, 331px 410px, 344px 412px, 356px 409px, 360px 411px, 362px 406px, 362px 403px, 366px 401px, 359px 386px, 357px 387px, 353px 384px, 353px 381px, 351px 379px, 347px 380px, 346px 376px, 344px 376px, 340px 372px, 333px 371px, 327px 365px, 330px 362px, 328px 359px, 325px 362px, 327px 365px, 319px 358px, 314px 357px, 294px 372px, 300px 378px, 298px 396px, 294px 396px, 291px 400px, 286px 398px, 288px 383px, 285px 375px, 294px 372px, 314px 357px, 308px 350px, 305px 340px, 295px 332px, 289px 332px, 286px 336px, 281px 339px, 281px 336px, 279px 335px)
+}
+#smallkosovo{
+clip-path:polygon(410px 361px, 404px 355px, 405px 351px, 410px 348px, 418px 354px, 417px 358px, 410px 361px)
+}
+#smalllatvia{
+clip-path:polygon(403px 191px, 402px 184px, 406px 180px, 406px 175px, 415px 172px, 424px 181px, 431px 179px, 430px 172px, 438px 169px, 451px 176px, 458px 175px, 466px 190px, 461px 195px, 454px 195px, 440px 190px, 437px 187px, 432px 189px, 410px 187px, 403px 191px)
+}
+#smallliechtenstein{
+clip-path:polygon(297px 301px, 300px 301px, 300px 297px, 296px 298px, 297px 301px)
+}
+#smalllithuania{
+clip-path:polygon(438px 217px, 428px 217px, 426px 212px, 421px 212px, 421px 204px, 405px 200px, 404px 193px, 410px 189px, 433px 192px, 437px 189px, 439px 192px, 453px 197px, 452px 201px, 456px 201px, 454px 203px, 452px 202px, 450px 202px, 446px 206px, 446px 211px, 448px 213px, 447px 215px, 444px 213px, 442px 214px, 440px 213px, 438px 217px)
+}
+#smallluxembourg{
+clip-path:polygon(262px 269px, 266px 269px, 267px 267px, 263px 265px, 262px 269px)
+}
+#smallmalta{
+clip-path:polygon(344px 439px, 344px 435px, 351px 438px, 348px 441px)
+}
+#smallmoldova{
+clip-path:polygon(482px 316px, 482px 306px, 465px 285px, 473px 284px, 480px 289px, 487px 289px, 487px 295px, 496px 306px, 488px 305px, 488px 311px, 482px 316px)
+}
+#smallmonaco{
+clip-path:polygon(274px 341px, 277px 341px, 276px 344px, 273px 343px, 274px 341px)
+}
+#smallmontenegro{
+clip-path:polygon(387px 353px, 386px 350px, 389px 349px, 392px 343px, 397px 349px, 403px 351px, 402px 354px, 397px 352px, 395px 361px, 387px 353px)
+}
+#smallthenetherlands{
+clip-path:polygon(240px 247px, 253px 230px, 270px 223px, 275px 225px, 273px 231px, 269px 233px, 273px 238px, 270px 241px, 262px 241px, 266px 248px, 264px 255px, 262px 253px, 264px 250px, 251px 246px, 244px 249px, 240px 247px)
+}
+#smallnorthmacedonia{
+clip-path:polygon(420px 374px, 412px 373px, 410px 375px, 408px 371px, 409px 363px, 411px 363px, 418px 360px, 418px 359px, 426px 358px, 432px 365px, 431px 369px, 423px 370px, 420px 374px)
+}
+#smallnorway{
+clip-path:polygon(291px 166px, 265px 164px, 260px 123px, 312px 95px, 331px 69px, 347px 57px, 328px 59px, 325px 57px, 353px 43px, 351px 50px, 360px 46px, 358px 42px, 377px 35px, 445px 27px, 467px 35px, 459px 38px, 466px 40px, 456px 46px, 456px 39px, 430px 38px, 421px 51px, 392px 44px, 389px 47px, 383px 47px, 380px 53px, 367px 52px, 367px 57px, 359px 57px, 351px 65px, 353px 69px, 339px 78px, 338px 89px, 332px 95px, 335px 100px, 326px 100px, 319px 109px, 321px 129px, 325px 131px, 325px 133px, 321px 134px, 322px 146px, 318px 148px, 317px 158px, 308px 149px, 291px 166px)
+}
+#smallpoland{
+clip-path:polygon(350px 252px, 347px 235px, 342px 230px, 344px 225px, 343px 216px, 359px 213px, 368px 206px, 382px 207px, 384px 212px, 425px 214px, 431px 231px, 425px 238px, 430px 240px, 429px 247px, 435px 256px, 423px 267px, 423px 274px, 415px 270px, 409px 272px, 404px 270px, 398px 272px, 394px 268px, 387px 269px, 381px 264px, 378px 264px, 378px 261px, 369px 258px, 367px 262px, 363px 259px, 363px 256px, 360px 256px, 359px 253px, 350px 252px)
+}
+#smallportugal{
+clip-path:polygon(108px 423px, 123px 422px, 121px 416px, 127px 409px, 125px 405px, 128px 399px, 124px 389px, 127px 389px, 132px 373px, 137px 367px, 132px 363px, 130px 365px, 120px 364px, 119px 361px, 113px 362px, 113px 381px, 104px 402px, 110px 406px, 108px 423px)
+}
+#smallromania{
+clip-path:polygon(432px 339px, 432px 339px, 433px 335px, 429px 334px, 428px 332px, 430px 330px, 425px 327px, 422px 330px, 416px 327px, 416px 322px, 409px 319px, 409px 314px, 404px 311px, 412px 310px, 422px 293px, 428px 289px, 443px 290px, 448px 293px, 453px 289px, 460px 290px, 463px 286px, 480px 307px, 479px 320px, 488px 323px, 495px 321px, 497px 325px, 490px 329px, 488px 326px, 487px 340px, 472px 334px, 458px 340px, 432px 339px)
+}
+#smallrussia{
+clip-path:polygon(610px 343px, 603px 341px, 599px 344px, 564px 324px, 566px 320px, 574px 320px, 576px 313px, 581px 311px, 574px 306px, 574px 305px, 582px 300px, 578px 299px, 581px 290px, 591px 292px, 592px 283px, 588px 278px, 592px 276px, 592px 269px, 571px 264px, 563px 258px, 546px 258px, 540px 248px, 532px 248px,530px 245px, 534px 242px,  527px 235px, 512px 234px, 511px 237px, 507px 237px, 501px 229px, 503px 226px, 508px 229px, 515px 223px, 510px 219px, 505px 219px, 506px 214px, 501px 214px, 495px 207px, 494px 197px, 486px 193px, 480px 195px, 480px 192px, 468px 190px, 419px 212px, 395px 211px, 398px 208px, 394px 208px, 394px 205px, 404px 205px, 404px 202px, 419px 205px, 419px 212px, 468px 190px, 460px 174px, 463px 170px, 460px 167px, 459px 159px, 463px 154px, 461px 149px, 478px 148px, 460px 140px, 487px 113px, 474px 104px, 477px 100px, 468px 90px, 471px 81px, 460px 69px, 466px 62px, 453px 54px, 455px 48px, 477px 37px, 486px 40px, 487px 43px, 509px 45px, 554px 62px, 558px 70px, 541px 79px, 484px 68px, 508px 81px, 506px 87px, 512px 96px, 533px 103px, 539px 102px, 536px 97px, 531px 98px, 524px 92px, 528px 88px, 538px 94px, 556px 93px, 548px 85px, 568px 74px, 584px 80px, 584px 70px, 577px 66px, 578px 56px, 571px 52px, 589px 53px, 600px 60px, 587px 64px, 597px 70px, 610px 70px, 610px 343px)
+}
+#smallsanmarino{
+clip-path:polygon(328px 338px, 329px 340px, 327px 341px, 325px 338px)
+}
+#smallserbia{
+clip-path:polygon(398px 348px, 395px 343px, 397px 341px, 395px 339px, 398px 336px, 393px 334px, 396px 325px, 393px 324px, 395px 322px, 393px 320px, 390px 314px, 402px 311px, 407px 315px, 407px 320px, 414px 324px, 414px 328px, 422px 332px, 425px 329px, 428px 330px, 426px 332px, 427px 335px, 424px 338px, 430px 347px, 425px 351px, 425px 356px, 419px 357px, 421px 355px, 411px 345px, 404px 349px, 398px 348px)
+}
+#smallslovakia{
+clip-path:polygon(373px 287px, 371px 279px, 376px 279px, 382px 272px, 394px 270px, 397px 275px, 404px 272px, 408px 275px, 414px 272px, 422px 276px, 420px 282px, 412px 282px, 403px 280px, 400px 286px, 388px 286px, 381px 292px, 373px 287px)
+}
+#smallslovenia{
+clip-path:polygon(339px 315px, 338px 308px, 349px 308px, 352px 305px, 361px 305px, 363px 304px, 365px 306px, 360px 309px, 357px 308px, 357px 314px, 354px 315px, 353px 318px, 349px 318px, 346px 314px, 343px 318px, 339px 318px, 341px 315px, 339px 315px)
+}
+#smallspain{
+clip-path:polygon(125px 422px, 124px 417px, 130px 409px, 127px 405px, 130px 399px, 127px 391px, 129px 391px, 134px 373px, 140px 366px, 132px 361px, 129px 363px, 122px 363px, 121px 359px, 113px 360px, 111px 349px, 125px 341px, 185px 345px, 214px 354px, 217px 359px, 223px 357px, 234px 357px, 234px 367px, 212px 374px, 198px 391px, 202px 402px, 195px 408px, 193px 416px, 179px 427px, 156px 427px, 144px 434px, 137px 434px, 129px 421px, 125px 422px)
+}
+#smallsweden{
+clip-path:polygon(328px 200px, 330px 197px, 326px 190px, 328px 186px, 317px 173px, 313px 158px, 318px 161px, 320px 149px, 324px 146px, 323px 135px, 327px 136px, 327px 129px, 323px 128px, 321px 109px, 327px 102px, 338px 102px, 339px 101px, 334px 95px, 340px 90px, 341px 79px, 356px 69px, 354px 65px, 361px 59px, 368px 59px, 369px 54px, 382px 55px, 384px 49px, 389px 49px, 412px 60px, 414px 77px, 420px 82px, 400px 86px, 400px 97px, 368px 119px, 366px 137px, 378px 141px, 383px 150px, 366px 162px, 357px 191px, 343px 194px, 342px 199px, 328px 200px)
+}
+#smallswitzerland{
+clip-path:polygon(273px 313px, 271px 306px, 266px 308px, 274px 295px, 295px 294px, 295px 296px, 294px 297px, 295px 302px, 301px 303px, 301px 302px, 305px 302px, 305px 304px, 303px 304px, 300px 308px, 297px 305px, 292px 311px, 286px 305px, 281px 311px, 273px 313px)
+}
+#smallukraine{
+clip-path:polygon(442px 287px, 428px 287px, 421px 283px, 425px 275px, 425px 268px, 438px 257px, 431px 247px, 446px 242px, 478px 248px, 483px 245px, 486px 250px, 497px 250px, 498px 242px, 506px 239px, 512px 240px, 513px 236px, 526px 237px, 531px 242px, 527px 245px, 531px 250px, 539px 250px, 545px 260px, 562px 260px, 570px 267px, 590px 271px, 590px 275px, 585px 278px, 590px 283px, 590px 290px, 580px 287px, 576px 300px, 553px 304px, 551px 311px, 547px 311px, 549px 308px, 535px 309px, 537px 313px, 542px 314px, 549px 321px, 563px 318px, 562px 324px, 555px 323px, 539px 332px, 538px 332px, 533px 330px, 534px 325px, 523px 321px, 534px 314px, 533px 312px, 516px 309px, 520px 306px, 509px 305px, 495px 319px, 488px 321px, 482px 319px, 490px 311px, 490px 307px, 499px 308px, 489px 294px, 489px 287px, 480px 287px, 473px 281px, 464px 283px, 459px 287px, 453px 287px, 448px 291px, 442px 287px )
+}
+#smalltheunitedkingdom{
+clip-path:polygon(155px 263px, 221px 249px, 217px 244px, 224px 232px, 214px 228px, 206px 211px, 199px 207px, 187px 191px, 197px 174px, 178px 172px, 185px 162px, 169px 162px, 155px 188px, 152px 202px, 138px 211px, 143px 214px, 148px 212px, 153px 215px, 160px 210px, 152px 202px, 155px 188px, 172px 206px, 181px 206px, 181px 224px, 166px 230px, 161px 241px, 180px 245px, 155px 263px)
+}
+#smallvaticancity{
+clip-path:polygon(329px 362px, 327px 364px, 326px 362px, 328px 360px)
+}
+
+</style>
+</head>
+
+<body style="overflow:hidden">
+<h1> How quickly can you find the countries of Europe?</h1>
+
+<div id="headContainer" style="position:relative; width:610px; height:180px; border: 4px solid black">
+<div id="mag" style="position:relative; overflow:hidden; border:4px solid black; width:200px; height:120px; left:201px; margin-top: 5px">
+ <img id="bgpic" src="Images/polygonmape2.png" style="border:8px solid black; position:absolute; width:1220px; height:916px; transform-origin:top left">
+ <div class="hcross"></div>
+ <div class="vcross"></div>
+</div>
+<div id="endScreen" style="position:absolute; left: 416px; top: 5px; width:180px; height:163px; border: 4px solid black; text-align:center">
+</div>
+<div id="testing" style="width:179px; height:120px; border:4px solid black; left: 7px; top:5px; text-align:center">
+
+</div>
+<button type="button" id="startBut" style="position:relative" onclick="reset()">start</button>
+<button type="button" id="endBut" style="position:relative" onclick="giveUp()">end</button>
+<button type="button" id="skipBut" style="position:relative" onclick = "skip()">skip</button>
+<input id="mySlide" onmousemove="scaler()" type="range" min="20" max = "100" value="20" style="width:150px; position:absolute; left:230px; margin-top:8px; cursor: pointer">
+</div>
+<div id="imgContainer" style="position:relative; border:4px solid black; width:610px; height:458px; margin-top:10px"  onmousemove="coords(event)" onwheel="scrolled(event)">
+<img src="Images/polygonmape2.png" style="position: relative; width:610px; height:458px">
+</div>
+
+<table style="position:absolute; left: 630px; top: 80px" id="cheekyTable">
+<tr>
+<th>found</th>
+<th>not found</th>
+<th>skipped</th>
+<tr>
+</table>
+
+<script>
+ const shapes = {
+ albania : {name:"albania", found:"false", mouseOver:false},
+ andorra : {name:"andorra", found:"false", mouseOver:false},
+ austria : {name:"austria", found:"false", mouseOver:false},
+ belarus: {name:"belarus", found:"false", mouseOver:false},
+ belgium : {name:"belgium", found:"false", mouseOver:false},
+ bosniaandherzegovina : {name:"bosniaandherzegovina", found:"false", mouseOver:false},
+ bulgaria : {name:"bulgaria", found:"false", mouseOver:false},
+ croatia : {name:"croatia", found:"false", mouseOver:false},
+ cyprus : {name:"cyprus", found:"false", mouseOver:false},
+ theczechrepublic : {name:"theczechrepublic", found:"false", mouseOver:false},
+ denmark : {name:"denmark", found:"false", mouseOver:false},
+ estonia : {name:"estonia", found:"false", mouseOver:false},
+ finland : {name:"finland", found:"false", mouseOver:false},
+ france : {name:"france", found:"false", mouseOver:false},
+ germany : {name:"germany", found:"false", mouseOver:false},
+ greece : {name:"greece", found:"false", mouseOver:false},
+ hungary : {name:"hungary", found:"false", mouseOver:false},
+ iceland : {name:"iceland", found:"false", mouseOver:false},
+ ireland : {name:"ireland", found:"false", mouseOver:false},
+ italy : {name:"italy", found:"false", mouseOver:false},
+ kosovo : {name:"kosovo", found:"false", mouseOver:false},
+ latvia : {name:"latvia", found:"false", mouseOver:false},
+ liechtenstein : {name:"liechtenstein", found:"false", mouseOver:false},
+ lithuania : {name:"lithuania", found:"false", mouseOver:false},
+ luxembourg : {name:"luxembourg", found:"false", mouseOver:false},
+ malta : {name:"malta", found:"false", mouseOver:false},
+ moldova : {name:"moldova", found:"false", mouseOver:false},
+ monaco : {name:"monaco", found:"false", mouseOver:false},
+ montenegro : {name:"montenegro", found:"false", mouseOver:false},
+ thenetherlands : {name:"thenetherlands", found:"false", mouseOver:false},
+ northmacedonia : {name:"northmacedonia", found:"false", mouseOver:false},
+ norway : {name:"norway", found:"false", mouseOver:false},
+ poland : {name:"poland", found:"false", mouseOver:false},
+ portugal : {name:"portugal", found:"false", mouseOver:false},
+ romania : {name:"romania", found:"false", mouseOver:false},
+ russia : {name:"russia", found:"false", mouseOver:false},
+ sanmarino : {name:"sanmarino", found:"false", mouseOver:false},
+ serbia : {name:"serbia", found:"false", mouseOver:false},
+ slovakia : {name:"slovakia", found:"false", mouseOver:false},
+ slovenia : {name:"slovenia", found:"false", mouseOver:false},
+ spain : {name:"spain", found:"false", mouseOver:false},
+ sweden : {name:"sweden", found:"false", mouseOver:false},
+ switzerland : {name:"switzerland", found:"false", mouseOver:false},
+ ukraine : {name:"ukraine", found:"false", mouseOver:false},
+ theunitedkingdom : {name:"theunitedkingdom", found:"false", mouseOver:false},
+ vaticancity : {name:"vaticancity", found:"false", mouseOver:false}
+ };
+
+ const pos = {
+ x:0, 
+ y:0
+ };
+
+ let nameArr = Object.keys(shapes);
+ let sfnd = [];
+ let tebble;
+ let row;
+ let cell;
+ let foundArray = [];
+ let tableFound = [];
+ let tableNotFound = [];
+ let skipped = [];
+ let tableSkipped = [];
+ let total = Object.keys(shapes).length;
+ let findShape;
+ let numfound=0; 
+ let numskipped=0;
+ let rng;
+ let maxLength=0;
+ let gameStarted = false;
+ let gameOver = false;
+ let identity;
+ let x = 0;
+ let s, m, h;
+ let stopwatch;
+ let timer;
+ let bestTime = 10000;
+ let displayBT = "-";
+ let displayPercentage;
+ let clicks=0;
+ let gameLaunched=false;
+ let magWidth = (document.getElementById("mag").style.width).slice(0,-2);
+ let magHeight = (document.getElementById("mag").style.height).slice(0,-2);
+
+ for (let i = 1; i<nameArr.length+1; i++){
+ row = document.getElementById("cheekyTable").insertRow(i);
+ row.insertCell(0).innerHTML = "";
+ cell=row.insertCell(1);
+ cell.innerHTML = nameArr[i-1];
+
+ row.insertCell(2);
+ }
+
+
+ function main(){
+ rng=Math.floor(Math.random()*(total-numfound-numskipped));
+ findShape = nameArr[rng];
+ document.getElementById("testing").innerHTML = "<br><br><br>Find: "+findShape + "<br>";
+ nameArr.splice(rng,1);
+ };
+
+
+ for (let i = 0; i<total; i++){
+ var div = document.createElement("div");
+ div.setAttribute("id", "small"+Object.keys(shapes)[i]);
+ div.setAttribute("class", Object.keys(shapes)[i]);
+ div.setAttribute("onmousemove", "reveal(this.className)");
+ div.setAttribute("onmouseleave", "hide(this.className)");
+ div.setAttribute("onclick", "validator(this.className)");
+ document.getElementById("imgContainer").appendChild(div);
+ };
+ for(let shape in shapes){
+ const styleObject = window.getComputedStyle(document.getElementById("small" +shape));
+ let x = styleObject.getPropertyValue('clip-path').slice(8,-1).split(", ");
+ let text = "";
+ for (let i = 0; i<x.length; i++){
+ text += (2*parseInt(x[i].split(" ")[0]))+"px ";
+ text += (2*parseInt(x[i].split(" ")[1]))+"px, ";
+ };
+ text = "polygon("+text.slice(0,-2)+")";
+ var div = document.createElement("div");
+ div.setAttribute("style","transform-origin:top left; clip-path: "+text);
+ div.setAttribute("class",shape);
+ div.setAttribute("id","big"+shape);
+ document.getElementById("mag").appendChild(div); 
+ }
+
+function stopStart(){
+x=0;
+document.getElementById("endScreen").innerHTML = "<br><br>Best completion time: " + displayBT + "<br>" + "Attempt time: 00:00:00";
+stopwatch = setInterval(stopGo,1000);
+}
+
+function stopStop(){
+clearInterval(stopwatch);
+}
+
+function stopGo(){
+x++;
+document.getElementById("endScreen").innerHTML = "<br><br>Best completion time: " + displayBT + "<br>" + "Attempt time: " + converter(x);
+}
+
+function timerStart(){
+x=3
+timer = setInterval(timerGo, 1000);
+}
+
+function timerGo(){
+x--;
+document.getElementById("testing").innerHTML ="<br><br><br>Starting in: " + x;
+if (x == 1){
+clearInterval(timer);
+}
+}
+
+function converter(a){
+m = Math.floor(a/60);
+s=a%60;
+h=Math.floor(m/60);
+m=m%60;
+s=lengther(s);
+m=lengther(m);
+h=lengther(h);
+return (h + ":" + m + ":" + s);
+}
+
+function lengther(i){
+if (i.toString().length<2){
+i="0" + i;
+}
+return i;
+}
+
+ let a = 2;
+ function coords(e){
+  pos.x=e.offsetX;
+  pos.y=e.offsetY;
+  document.getElementById("coordinates").innerHTML=pos.x + ", " + pos.y;
+  moveMagd();
+ }
+
+ function moveMagd(){
+ document.getElementById("bgpic").style.left=(-1*(a)*(pos.x+4)+Math.floor(magWidth/2))+"px";
+ document.getElementById("bgpic").style.top=(-1*(a)*(pos.y+4)+Math.floor(magHeight/2))+"px";
+ for (shape in shapes){
+ document.getElementById("big"+shape).style.left=(-1*(a)*(pos.x)+Math.floor(magWidth/2))+"px";
+ document.getElementById("big"+shape).style.top=(-1*(a)*(pos.y)+Math.floor(magHeight/2))+"px";
+ }
+ }
+
+ function reveal(obj){
+ shapes[obj].mouseOver=true;
+ if (shapes[obj].found=="false" && gameOver == false && gameStarted == true){
+ colour("chartreuse", obj, 0.6);
+ }
+ if (gameOver == true){
+ opacitator(obj, 0.6);
+ }
+ }  
+
+ function hide(obj){
+ shapes[obj].mouseOver=false;
+ if (shapes[obj].found=="false" && gameOver == false  && gameStarted == true){
+ colour("white", obj, 0.6);
+ }
+ if (gameOver == true){
+ antiOpacitator(obj);
+ }
+ } 
+
+ function validator(obj){
+ if(shapes[obj].name==findShape && gameOver == false  && gameStarted == true){
+ colour("CornflowerBlue", obj, 0);
+ shapes[obj].found="true";
+ numfound++;
+ clicks++;
+ foundArray.push(obj);
+ if (numfound+numskipped <= total){
+ tabulate();
+ }
+ if (numfound+numskipped < total){
+ main();
+ } else{
+ giveUp();
+ }
+ } else  if((shapes[obj].name!==findShape) & (shapes[obj].found=="false")  && gameStarted == true){
+ clicks++;
+ colour("#ED5F5F", obj, 0)
+ setTimeout(governer, 180, obj);
+ }  
+ }
+
+ function colour(c, obj, d){
+ document.getElementById("small"+obj).style.transition = "background-color " + d + "s";
+ document.getElementById("small"+obj).style.backgroundColor=  c;
+ document.getElementById("big"+obj).style.transition = "background-color " + d + "s";
+ document.getElementById("big"+obj).style.backgroundColor = c;
+ }
+
+
+ function governer(obj){
+ if (shapes[obj].mouseOver == true){
+ reveal(obj);
+ }
+ }
+
+ function skip(){
+ if (gameOver == false && gameStarted == true){
+ colour("#ED5F5F", findShape, 0.2);
+ shapes[findShape].found="skipped";
+ numskipped++;
+ skipped.push(findShape);
+ if (numfound+numskipped <= total){
+ tabulate();
+ }
+ if (numfound+numskipped < total){
+ main();
+ } else{
+
+ giveUp();
+ }
+ }
+ }
+
+ function giveUp(){
+ if (gameStarted == true && gameOver == false){
+ document.getElementById("testing").innerHTML = "<br><br><br>quiz complete";
+ if (x<bestTime && numfound==total){
+ bestTime = x;
+ displayBT = converter(bestTime);
+ }
+ if (numfound==total){
+ displayPercentage = "Accuracy: " + Math.floor(100*total/clicks) + "%";
+ } else {
+ displayPercentage = "Completion: " + Math.floor(100*numfound/total) + "%";
+ }
+ document.getElementById("endScreen").innerHTML =  "<br><br>Best completion time: " + displayBT + "<br>" + "Attempt time: " + converter(x) + "<br>" + "<br>" +  displayPercentage + "<br>";
+ stopStop();
+ for (let shape in shapes){
+ if (shapes[shape].found!=="true"){
+ colour("#ED5F5F", shape, 0.3);
+ }
+ }
+ gameOver=true;
+ gameStarted=false;
+ gameLaunched=false;
+ wordColor(0, numfound, "lime");
+ wordColor(1, total-(numfound+numskipped), "hotpink");
+ wordColor(2, numskipped, "orange");
+ for (let shape in shapes){
+ if (shapes[shape].mouseOver==true){
+ opacitator(shape, 0);
+ }
+ }
+ }
+ }
+
+ function wordColor(start, loopMax, color){
+ for (let i = start; i<3*(loopMax); i+=3){
+ identity =  document.getElementsByTagName("td")[i].innerHTML;
+ document.getElementsByTagName("td")[i].setAttribute("id", "word"+identity);
+ document.getElementsByTagName("td")[i].setAttribute("style", "color:" + color)
+ document.getElementsByTagName("td")[i].style.cursor="pointer";
+ document.getElementsByTagName("td")[i].setAttribute("onmouseenter", "opacitator(this.innerHTML, 0.6)");
+ document.getElementsByTagName("td")[i].setAttribute("onmouseleave", "antiOpacitator(this.innerHTML)");
+ }
+ } 
+
+ function opacitator(word, dly){
+ document.getElementById("word"+word).style.transition="color " + dly + "s";
+ document.getElementById("word"+word).style.color="black";
+ document.getElementById("small"+word).style.transition="filter " + dly + "s";
+ document.getElementById("small"+word).style.filter="brightness(140%)";
+ document.getElementById("big"+word).style.transition="filter " + dly + "s";
+ document.getElementById("big"+word).style.filter="brightness(140%)";
+ } 
+
+ function antiOpacitator(word){
+ document.getElementById("word"+word).style.transition="color 0s";
+ document.getElementById("small"+word).style.transition="filter 0s";
+ document.getElementById("big"+word).style.transition="filter 0s";
+ if (shapes[word].found=="true"){
+ document.getElementById("word"+word).style.color="lime";
+ } else if (shapes[word].found=="false"){
+  document.getElementById("word"+word).style.color="hotpink";
+ } else {
+  document.getElementById("word"+word).style.color="orange";
+ }
+ document.getElementById("small"+word).style.filter="brightness(100%)";
+ document.getElementById("big"+word).style.filter="brightness(100%)";
+ }
+
+ function reset(){
+ if (gameLaunched == false){
+ for (let shape in shapes){
+ colour("white", shape, 0.3);
+ shapes[shape].found="false";
+ if (gameOver==true){
+ document.getElementById("word"+shape).style.transition="0.3s";
+ document.getElementById("word"+shape).style.opacity=0;
+ }
+ }
+ gameLaunched=true;
+ document.getElementById("testing").innerHTML = "<br><br><br>Starting in: 3"
+ timerStart();
+ gameOver = false;
+ setTimeout(restOfReset, 3000);
+ }
+ function restOfReset(){
+ if (gameStarted==false){
+ for (let shape in shapes){
+ if (shapes[shape].mouseOver == true){
+ colour("chartreuse", shape, 0.3);
+ }
+ }
+ document.getElementById("endScreen").innerHTML =  "<br><br>Best completion time: " + displayBT
+ stopStart();
+ gameStarted=true;
+ document.getElementById("testing").innerHTML = "";
+ nameArr=Object.keys(shapes);
+ clicks=0;
+ numfound=0;
+ numskipped=0
+ for (let i = document.getElementById("cheekyTable").rows.length-1; i>0;i--){
+ document.getElementById("cheekyTable").deleteRow(i); 
+ }
+ for (let i = 1; i<nameArr.length+1; i++){
+ row = document.getElementById("cheekyTable").insertRow(i);
+ row.insertCell(0).innerHTML = "";
+ row.insertCell(1).innerHTML = nameArr[i-1];
+ row.insertCell(2).innerHTML = "";
+ }
+
+ foundArray = [];
+ tableFound = [];
+ tableNotFound = [];
+ skipped = [];
+ tableSkipped = [];
+ main();
+ }
+ }
+}
+
+ function scrolled(e){
+ document.getElementById("mySlide").value-=e.deltaY/50;
+ scaler();
+
+ }
+
+ function scaler(){
+ a=document.getElementById("mySlide").value/10;
+ document.getElementById("bgpic").style.scale=a/2;
+ for (let shape in shapes){
+ document.getElementById("big"+shape).style.scale=a/2;
+ }
+ moveMagd();
+ }
+
+ function tabulate(){
+ tebble = document.getElementById("cheekyTable");
+ for (let i = tebble.rows.length-1; i>0; i--){
+ tebble.deleteRow(i);
+ }
+ tableFound = foundArray.slice(0);
+ tableNotFound = nameArr.slice(0);
+ tableSkipped = skipped.slice(0);
+ maxLength = nameArr.length;
+ if (foundArray.length > maxLength){
+ maxLength = foundArray.length;
+ } 
+ if (skipped.length>maxLength){
+ maxLength = skipped.length;
+ }
+ for (let i = tableFound.length; i<maxLength; i++){
+ tableFound.push("");
+ }
+ for (let i = tableNotFound.length; i<maxLength; i++){
+ tableNotFound.push("");
+ }
+ for (let i = tableSkipped.length; i<maxLength; i++){
+ tableSkipped.push("");
+ }
+ for (let i = 1; i<=maxLength; i++){
+ row = tebble.insertRow(i);
+ cell = row.insertCell(0);
+ cell.innerHTML = tableFound[i-1];
+ cell = row.insertCell(1);
+ cell.innerHTML = tableNotFound[i-1];
+ cell = row.insertCell(2);
+ cell.innerHTML = tableSkipped[i-1];
+ }
+ 
+ }
+</script>
+<br>
+
+<p id="coordinates" style="position:absolute; top:300px; left:200px; z-index:3"></p>
+<p id="hey"></p>
+</body>
+
+</html>
+
+
+
+
+
+
